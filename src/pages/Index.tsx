@@ -104,7 +104,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              <h1 className="md:text-7xl font-bold mb-6 leading-tight text-6xl">
                 ШИРОКОФОРМАТНАЯ<br />
                 <span className="text-primary">ПЕЧАТЬ БАННЕРОВ</span>
               </h1>
