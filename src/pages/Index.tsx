@@ -106,7 +106,7 @@ const Index = () => {
             <div className="animate-fade-in">
               <h1 className="md:text-7xl font-bold mb-6 leading-tight text-6xl">
                 ШИРОКОФОРМАТНАЯ<br />
-                <span className="text-primary">ПЕЧАТЬ БАННЕРОВ</span>
+                <span className="text-primary text-5xl">ПЕЧАТЬ БАННЕРОВ</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Производство наружной рекламы любого размера и сложности. Собственное производство, сроки от 1 дня.
