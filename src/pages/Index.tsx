@@ -7,8 +7,6 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
-  const [calcWidth, setCalcWidth] = useState(1);
-  const [calcHeight, setCalcHeight] = useState(1);
 
   const services = [
     {
@@ -59,24 +57,12 @@ const Index = () => {
     { name: 'Cadillac', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Cadillac_logo.svg/320px-Cadillac_logo.svg.png' }
   ];
 
-  const prices = [
-    { material: 'Баннер Frontlit 440г/м²', price: '290', unit: 'м²' },
-    { material: 'Баннер Backlit 440г/м²', price: '320', unit: 'м²' },
-    { material: 'Сетка Banner Mesh', price: '250', unit: 'м²' },
-    { material: 'Самоклеящаяся пленка', price: '380', unit: 'м²' },
-    { material: 'Холст для интерьерной печати', price: '450', unit: 'м²' }
-  ];
+
 
   const scrollToSection = (section: string) => {
     setActiveSection(section);
     const element = document.getElementById(section);
     element?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const calculatePrice = () => {
-    const area = calcWidth * calcHeight;
-    const basePrice = 290;
-    return (area * basePrice).toLocaleString('ru-RU');
   };
 
   return (
@@ -86,10 +72,10 @@ const Index = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <Icon name="Printer" size={32} className="text-primary" />
-              <span className="text-2xl font-bold">ПРИНТ-МАСТЕР</span>
+              <span className="text-2xl font-bold">ИНТЕГРА</span>
             </div>
             <div className="hidden md:flex gap-6">
-              {['home', 'services', 'portfolio', 'partners', 'prices', 'about', 'contacts'].map((section) => (
+              {['home', 'services', 'portfolio', 'partners', 'about', 'contacts'].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -101,7 +87,6 @@ const Index = () => {
                   {section === 'services' && 'Услуги'}
                   {section === 'portfolio' && 'Портфолио'}
                   {section === 'partners' && 'Партнеры'}
-                  {section === 'prices' && 'Цены'}
                   {section === 'about' && 'О нас'}
                   {section === 'contacts' && 'Контакты'}
                 </button>
@@ -124,12 +109,12 @@ const Index = () => {
                 <span className="text-primary">ПЕЧАТЬ БАННЕРОВ</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Производство наружной рекламы любого размера и сложности. Собственное производство, европейское оборудование, сроки от 1 дня.
+                Производство наружной рекламы любого размера и сложности. Собственное производство, сроки от 1 дня.
               </p>
               <div className="flex gap-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => scrollToSection('prices')}>
-                  <Icon name="Calculator" size={20} className="mr-2" />
-                  Рассчитать стоимость
+                <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => scrollToSection('contacts')}>
+                  <Icon name="Phone" size={20} className="mr-2" />
+                  Связаться с нами
                 </Button>
                 <Button size="lg" variant="outline" onClick={() => scrollToSection('portfolio')}>
                   <Icon name="FileText" size={20} className="mr-2" />
@@ -236,77 +221,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section id="prices" className="py-20 px-4">
-        <div className="container mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Цены</h2>
-          <p className="text-center text-muted-foreground mb-12 text-lg">
-            Прозрачное ценообразование
-          </p>
-          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            <Card className="p-8 bg-card">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Icon name="FileText" size={24} className="text-primary" />
-                Прайс-лист
-              </h3>
-              <div className="space-y-4">
-                {prices.map((item, index) => (
-                  <div key={index} className="flex justify-between items-center pb-4 border-b border-border">
-                    <span className="text-muted-foreground">{item.material}</span>
-                    <span className="font-bold text-lg">
-                      {item.price} ₽/{item.unit}
-                    </span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground mt-6">
-                * Цены указаны за печать. Дополнительные услуги (монтаж, люверсы, ламинация) оплачиваются отдельно.
-              </p>
-            </Card>
-            <Card className="p-8 bg-card border-primary">
-              <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
-                <Icon name="Calculator" size={24} className="text-primary" />
-                Калькулятор стоимости
-              </h3>
-              <div className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Ширина (метры)</label>
-                  <Input
-                    type="number"
-                    min="0.5"
-                    step="0.5"
-                    value={calcWidth}
-                    onChange={(e) => setCalcWidth(Number(e.target.value))}
-                    className="text-lg"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium mb-2">Высота (метры)</label>
-                  <Input
-                    type="number"
-                    min="0.5"
-                    step="0.5"
-                    value={calcHeight}
-                    onChange={(e) => setCalcHeight(Number(e.target.value))}
-                    className="text-lg"
-                  />
-                </div>
-                <div className="bg-primary/10 p-6 rounded-lg">
-                  <div className="text-sm text-muted-foreground mb-2">Площадь: {calcWidth * calcHeight} м²</div>
-                  <div className="text-3xl font-bold text-primary">
-                    ≈ {calculatePrice()} ₽
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-2">
-                    Базовый расчёт для баннера 440г/м²
-                  </p>
-                </div>
-                <Button className="w-full bg-primary hover:bg-primary/90">
-                  Получить точный расчёт
-                </Button>
-              </div>
-            </Card>
-          </div>
-        </div>
-      </section>
+
 
       <section id="about" className="py-20 px-4 bg-card/50">
         <div className="container mx-auto">
@@ -314,10 +229,10 @@ const Index = () => {
             <div>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">О компании</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Принт-Мастер — ведущая типография широкоформатной печати с 15-летним опытом работы. Мы специализируемся на производстве наружной рекламы, баннеров, вывесок и интерьерной печати.
+                Интегра — ведущая типография широкоформатной печати с 15-летним опытом работы. Мы специализируемся на производстве наружной рекламы, баннеров, вывесок и интерьерной печати.
               </p>
               <p className="text-lg text-muted-foreground mb-8">
-                Собственное производство площадью 1200 м², современное европейское оборудование и профессиональная команда позволяют нам выполнять заказы любой сложности в кратчайшие сроки.
+                Собственное производство площадью 1200 м² и профессиональная команда позволяют нам выполнять заказы любой сложности в кратчайшие сроки.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div className="flex items-start gap-3">
@@ -325,13 +240,6 @@ const Index = () => {
                   <div>
                     <div className="font-bold mb-1">Собственное производство</div>
                     <div className="text-sm text-muted-foreground">Контроль качества на всех этапах</div>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <Icon name="CheckCircle" size={24} className="text-primary flex-shrink-0" />
-                  <div>
-                    <div className="font-bold mb-1">Европейское оборудование</div>
-                    <div className="text-sm text-muted-foreground">Roland, Mimaki, HP Latex</div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
@@ -400,8 +308,7 @@ const Index = () => {
                   </div>
                   <div>
                     <div className="font-bold mb-2">Телефон</div>
-                    <div className="text-muted-foreground">+7 (495) 123-45-67</div>
-                    <div className="text-muted-foreground">+7 (800) 555-35-35</div>
+                    <div className="text-muted-foreground">+7 (495) 745-41-41</div>
                   </div>
                 </div>
               </Card>
@@ -412,21 +319,28 @@ const Index = () => {
                   </div>
                   <div>
                     <div className="font-bold mb-2">Email</div>
-                    <div className="text-muted-foreground">info@printmaster.ru</div>
-                    <div className="text-muted-foreground">order@printmaster.ru</div>
+                    <div className="text-muted-foreground">zakaz@banner-moscow.ru</div>
                   </div>
                 </div>
               </Card>
               <Card className="p-6 bg-card">
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
                     <Icon name="MapPin" size={24} className="text-primary" />
                   </div>
                   <div>
                     <div className="font-bold mb-2">Адрес</div>
-                    <div className="text-muted-foreground">г. Москва, ул. Производственная, д. 12</div>
-                    <div className="text-muted-foreground">Пн-Пт: 9:00 - 21:00, Сб-Вс: 10:00 - 18:00</div>
+                    <div className="text-muted-foreground">г. Москва, ул. Краснобогатырская, д. 2 стр. 53</div>
                   </div>
+                </div>
+                <div className="w-full h-64 rounded-lg overflow-hidden">
+                  <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3Aca0e5ce01f4b0fdb1fbf2c53ba8f7ab5f29c6c1db1f28b6e2b4b5a0d6c8e9f0a&amp;source=constructor"
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    title="Яндекс Карта"
+                  ></iframe>
                 </div>
               </Card>
               <Card className="p-6 bg-card">
@@ -452,7 +366,7 @@ const Index = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <Icon name="Printer" size={28} className="text-primary" />
-                <span className="text-xl font-bold">ПРИНТ-МАСТЕР</span>
+                <span className="text-xl font-bold">ИНТЕГРА</span>
               </div>
               <p className="text-sm text-muted-foreground">
                 Широкоформатная печать баннеров и наружная реклама
@@ -479,14 +393,14 @@ const Index = () => {
             <div>
               <h4 className="font-bold mb-4">Контакты</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>+7 (495) 123-45-67</li>
-                <li>info@printmaster.ru</li>
-                <li>г. Москва, ул. Производственная, 12</li>
+                <li>+7 (495) 745-41-41</li>
+                <li>zakaz@banner-moscow.ru</li>
+                <li>г. Москва, ул. Краснобогатырская, 2 стр. 53</li>
               </ul>
             </div>
           </div>
           <div className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
-            © 2024 Принт-Мастер. Все права защищены.
+            © 2024 Интегра. Все права защищены.
           </div>
         </div>
       </footer>
