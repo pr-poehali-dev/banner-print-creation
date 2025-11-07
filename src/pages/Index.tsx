@@ -104,9 +104,9 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h1 className="md:text-7xl font-bold mb-6 leading-tight text-6xl">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
                 ШИРОКОФОРМАТНАЯ<br />
-                <span className="text-primary text-5xl">ПЕЧАТЬ БАННЕРОВ</span>
+                <span className="text-primary">ПЕЧАТЬ БАННЕРОВ</span>
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
                 Производство наружной рекламы любого размера и сложности. Собственное производство, сроки от 1 дня.
