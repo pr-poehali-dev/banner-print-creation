@@ -55,11 +55,11 @@ const Index = () => {
   ];
 
   const partners = [
-    { name: 'KIA', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Kia-logo.svg/320px-Kia-logo.svg.png' },
-    { name: 'Land Rover', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Land_Rover_logo.svg/320px-Land_Rover_logo.svg.png' },
+    { name: 'KIA', logo: 'https://cdn.poehali.dev/files/c1b3eb59-41d9-4dd5-a475-a55dc39becc7.png' },
+    { name: 'Land Rover', logo: 'https://cdn.poehali.dev/files/4e3caf7d-99b3-4127-a636-010946e1c89e.png' },
     { name: 'Mercedes-Benz', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mercedes-Logo.svg/240px-Mercedes-Logo.svg.png' },
-    { name: 'МТС', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/MTS_logo_%282016%29.svg/320px-MTS_logo_%282016%29.svg.png' },
-    { name: 'Cadillac', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Cadillac_logo.svg/320px-Cadillac_logo.svg.png' }
+    { name: 'МТС', logo: 'https://cdn.poehali.dev/files/239b914d-1ab1-40dd-94de-ba5c44258502.png' },
+    { name: 'Cadillac', logo: 'https://cdn.poehali.dev/files/26de22ea-7636-4f95-89ab-bb746ef0981b.png' }
   ];
 
 
