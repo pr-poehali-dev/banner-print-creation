@@ -33,19 +33,24 @@ const Index = () => {
 
   const portfolio = [
     {
-      image: 'https://cdn.poehali.dev/projects/0ee86ee9-3766-4374-9f53-da23879a88ae/files/2be238d5-23ba-49ac-9513-67a539b56280.jpg',
-      title: 'Фасадный баннер 10x4м',
+      image: 'https://cdn.poehali.dev/files/aa637e3d-0b7c-4c11-a0ae-dbfbe1edb756.jpg',
+      title: 'Баннер Lenovo',
       category: 'Наружная реклама'
     },
     {
-      image: 'https://cdn.poehali.dev/projects/0ee86ee9-3766-4374-9f53-da23879a88ae/files/e5b595cb-8185-4613-a47a-6a6e0b81ad41.jpg',
-      title: 'Рекламный баннер',
-      category: 'Выставочные стенды'
+      image: 'https://cdn.poehali.dev/files/46456057-469f-4971-9906-694183df5469.jpg',
+      title: 'Баннер Cirque du Soleil',
+      category: 'Культурные мероприятия'
     },
     {
-      image: 'https://cdn.poehali.dev/projects/0ee86ee9-3766-4374-9f53-da23879a88ae/files/22a10377-c679-4feb-ba9d-0840a1469d8e.jpg',
-      title: 'Широкоформатная печать',
-      category: 'Производство'
+      image: 'https://cdn.poehali.dev/files/656338c8-49f2-48d0-8d0b-337fc794c13a.jpg',
+      title: 'Баннер МТС',
+      category: 'Наружная реклама'
+    },
+    {
+      image: 'https://cdn.poehali.dev/files/d73723ca-2bb1-4bc5-a854-44238b9b5797.jpg',
+      title: 'Баннер Lexus',
+      category: 'Автомобильная реклама'
     }
   ];
 
@@ -177,7 +182,7 @@ const Index = () => {
           <p className="text-center text-muted-foreground mb-12 text-lg">
             Примеры наших работ
           </p>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {portfolio.map((item, index) => (
               <div
                 key={index}
